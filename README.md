@@ -6,7 +6,9 @@
 virtualenv venv
 source venv/bin/activate
 pip install numpy
+// make sure to activate the venv before installing numpy
 ```
+
 
 ### Clone repos for opencv and opencv_extra_modules
 ```sh
@@ -21,7 +23,7 @@ mkdir build && cd build
 ```
 
 ```sh
-cmake -DOPENCV_EXTRA_MODULES_PATH=/Users/vasilis/projects/opencv_contrib/modules \
+cmake -DOPENCV_EXTRA_MODULES_PATH=<path_to_opencv_extra_modules> \
 -D BUILD_opencv_python2=OFF \
 -D BUILD_ZLIB=OFF \
 -D BUILD_opencv_legacy=OFF \
@@ -33,4 +35,11 @@ make -j4
 ```
 ```sh
 sudo make install
+```
+
+
+### Compile file
+```sh
+g++ -std=c++17 src/vers.cpp
+./a.out
 ```
