@@ -49,3 +49,10 @@ g++ -std=c++17 -o out src/main.cpp $(pkg-config --cflags --libs opencv4)
 
 ## To do
 - use deep learning models to enhance images
+- use techniques like:
+    - Sharpening
+    - Constrast Enhancement
+    - Denoising
+    - Super-Resolution
+    - HDR Imaging
+    - Color Correction
