@@ -1,5 +1,5 @@
 # image-enhancer
-
+**A simple c++ script to upscale an image**
 
 ### Create and activate virtual environment
 ```sh
@@ -37,17 +37,15 @@ See [here](https://github.com/vmouchakis/configuration/blob/main/install_opencv.
 
 #### Using CMake
 ```sh
-mkdir build
-cd build
-cmake ..
-make
-
-cd ..
-./out
+chmod u+x compile.sh # run this command only once
+./compile.sh
 ```
 
 #### Using g++
 ```sh
-g++ -std=c++17 -o out src/vers.cpp $(pkg-config --cflags --libs opencv4)
+g++ -std=c++17 -o out src/main.cpp $(pkg-config --cflags --libs opencv4)
 ./out
 ```
+
+## To do
+- use deep learning models to enhance images
