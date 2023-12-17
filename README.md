@@ -16,30 +16,38 @@ git clone https://github.com/opencv/opencv.git
 git clone https://github.com/opencv/opencv_contrib.git
 ```
 
-### Build and install opencv
+### Install opencv
+
+#### For MacOs
 ```sh
-cd opencv
-mkdir build && cd build
+brew install opencv
 ```
 
+#### For Ubuntu
 ```sh
-cmake -DOPENCV_EXTRA_MODULES_PATH=<path_to_opencv_extra_modules> \
--D BUILD_opencv_python2=OFF \
--D BUILD_ZLIB=OFF \
--D BUILD_opencv_legacy=OFF \
--D BUILD_EXAMPLES=ON \
-..
+sudo apt update
+sudo apt install libopencv-dev
 ```
-```sh
-make -j4
-```
-```sh
-sudo make install
-```
+
+#### Build from source
+See [here](https://github.com/vmouchakis/configuration/blob/main/install_opencv.sh).
 
 
 ### Compile file
+
+#### Using CMake
 ```sh
-g++ -std=c++17 src/vers.cpp
-./a.out
+mkdir build
+cd build
+cmake ..
+make
+
+cd ..
+./out
+```
+
+#### Using g++
+```sh
+g++ -std=c++17 -o out src/vers.cpp $(pkg-config --cflags --libs opencv4)
+./out
 ```
